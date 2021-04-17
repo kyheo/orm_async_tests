@@ -1,8 +1,11 @@
 [tool.poetry]
-name = "ORM Async Tests"
+name = "orm_async_tests"
 version = "0.1.0"
 description = "SQLAlchemy async tests."
 authors = ["Martin Marrese <marrese@gmail.com>"]
+
+[tool.poetry.scripts]
+test1 = "orm_async_tests.test1:run"
 
 [tool.poetry.dependencies]
 python = "^3.9"

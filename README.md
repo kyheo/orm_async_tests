@@ -11,13 +11,30 @@ SQLAlchemy.
 `docker compose up` will start the DB and create the default user, password 
 and database.
 
+Then you, after installing Poetry on the system 
+(info [here](https://python-poetry.org)), run `poetry install`.
+
+Then you can choose:
+
+- Run any script defined in `pyproject.toml`:
+```shell
+$ poetry run test1
+```
+
+- Run any script from within inside a shell:
+```shell
+$ poetry shell
+$ test1
+```
+
 ## Tools and libraries
 We use the following tools:
 - docker: With compose, used to create the environment in which everything 
   runs.
 - poetry: To manage the project, requirements and venv.
 - nox: As a Python replacement of tox, automation tool.
-- alembic: To handle DB migrations.
+- alembic: To handle DB migrations. 
+  [Aync support](https://docs.sqlalchemy.org/en/14/orm/extensions/asyncio.html?highlight=async)
   
 And the following libraries and Python packages:
 - SQLAlchemy: As the ORM.
