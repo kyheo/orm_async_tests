@@ -7,4 +7,4 @@ per-file-ignores =
     tests/*:S101
 exclude =
     src/alembic/env.py
-ignore = D10
+ignore = D10, ANN002, ANN003, ANN101, ANN102,

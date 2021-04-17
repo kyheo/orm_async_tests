@@ -3,6 +3,7 @@ version: '3.9'
 services:
   db:
     image: postgres:13.2
+    command: "-c log_statement=all"  # Log all statements
     healthcheck:
       test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
       timeout: 45s

@@ -6,6 +6,7 @@ authors = ["Martin Marrese <marrese@gmail.com>"]
 
 [tool.poetry.scripts]
 test1 = "orm_async_tests.test1:run"
+test2 = "orm_async_tests.test2:run"
 
 [tool.poetry.dependencies]
 python = "^3.9"

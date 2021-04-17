@@ -27,12 +27,14 @@ async def load_data() -> None:
                 print(f"load_data: Commit {i}.")
                 sleep = random.randint(1, 5)  # noqa: S311
                 await session.commit()
+                await session.close()
                 print(f"load_data: Sleep {sleep} seconds.")
                 await asyncio.sleep(sleep)
                 session = async_session()
     finally:
         print("load_data: Task ended. Commit remainder")
         await session.commit()
+        await session.close()
     print("load_data: Stop.")
 
 
@@ -55,6 +57,7 @@ async def add_tracking_points_to_user_30() -> None:
             if i > 0 and i % 500 == 0:
                 print(f"add_tracking_points_to_user_30: Commit {i}.")
                 await session.commit()
+                await session.close()
                 sleep = random.randint(1, 5)  # noqa: S311
                 print(f"add_tracking_points_to_user_30: Sleep {sleep} seconds.")
                 await asyncio.sleep(sleep)
@@ -62,6 +65,7 @@ async def add_tracking_points_to_user_30() -> None:
     finally:
         print("add_tracking_points_to_user_30: Task ended. Commit remainder")
         await session.commit()
+        await session.close()
 
 
 async def async_main() -> None:
