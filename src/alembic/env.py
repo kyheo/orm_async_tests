@@ -14,7 +14,7 @@ fileConfig(config.config_file_name)
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-from src import models
+from src.orm_async_tests import models
 
 target_metadata = models.Base.metadata
 
@@ -37,7 +37,7 @@ def run_migrations_offline():
     script output.
 
     """
-    from src.db import dsn as url
+    from src.orm_async_tests.db import dsn as url
 
     # url = config.get_main_option("sqlalchemy.url")
 
@@ -66,7 +66,7 @@ async def run_migrations_online():
     and associate a connection with the context.
 
     """
-    from src.db import engine as connectable
+    from src.orm_async_tests.db import engine as connectable
 
     # connectable = AsyncEngine(
     #     engine_from_config(
